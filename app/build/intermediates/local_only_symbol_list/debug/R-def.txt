@@ -1,0 +1,35 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_action_name
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id buttonPaper
+id buttonRock
+id buttonScissor
+id buttonThreePlayers
+id buttonTwoPlayers
+id editContactMi
+id removeContactMi
+id saveBt
+id textBox
+id toolbar
+id toolbarIn
+id viewMi
+layout activity_main
+layout game_choose
+layout toolbar
+menu context_menu_main
+menu menu_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string edit_contact
+string email
+string name
+string remove_contact
+style Base.Theme.ContactsPdm
+style Theme.ContactsPdm
+xml backup_rules
+xml data_extraction_rules

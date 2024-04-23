@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.example.pedrapapeltesoura.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.example.pedrapapeltesoura.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.pedrapapeltesoura.app-mergeDebugResources-30:/layout/toolbar.xml",
+        "source": "com.example.pedrapapeltesoura.app-main-33:/layout/toolbar.xml"
+    },
+    {
+        "merged": "com.example.pedrapapeltesoura.app-mergeDebugResources-30:/layout/game_choose.xml",
+        "source": "com.example.pedrapapeltesoura.app-main-33:/layout/game_choose.xml"
+    }
+]

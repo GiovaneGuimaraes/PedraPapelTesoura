@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PedraPapelTesoura</string>
+    <string name="name">Name</string>
+    <string name="email">email</string>
+    <string name="remove_contact"> Remover Contato</string>
+    <string name="edit_contact">Editar Contato</string>
+</resources>
