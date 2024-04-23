@@ -5,7 +5,5 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Game(
-    var pedra: Int = 0,
-    var papel: Int = 0,
-    var tesoura: Int = 0,
+    val options: List<String> = listOf("Pedra", "Papel", "Tesoura")
 ): Parcelable

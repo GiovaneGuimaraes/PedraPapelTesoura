@@ -7,9 +7,9 @@
     <string name="email">email</string>
     <string name="name">Name</string>
     <string name="remove_contact"> Remover Contato</string>
-    <style name="Base.Theme.ContactsPdm" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.PedraPapelTesoura" parent="Theme.Material3.DayNight.NoActionBar">
         
         
     </style>
-    <style name="Theme.ContactsPdm" parent="Base.Theme.ContactsPdm"/>
+    <style name="Theme.PedraPapelTesoura" parent="Base.Theme.PedraPapelTesoura"/>
 </resources>

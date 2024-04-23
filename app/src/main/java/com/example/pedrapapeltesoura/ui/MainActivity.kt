@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        amb.buttonThreePlayers.setOnClickListener {
+            val intent = Intent(this@MainActivity, GameWithThreePlayers::class.java)
+            startActivity(intent)
+        }
+
     }
 
 }

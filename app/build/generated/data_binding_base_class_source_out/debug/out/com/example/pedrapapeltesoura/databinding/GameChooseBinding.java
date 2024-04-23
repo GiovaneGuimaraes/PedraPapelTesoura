@@ -4,7 +4,7 @@ package com.example.pedrapapeltesoura.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,16 +21,13 @@ public final class GameChooseBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button buttonPaper;
+  public final ImageView buttonPaper;
 
   @NonNull
-  public final Button buttonRock;
+  public final ImageView buttonRock;
 
   @NonNull
-  public final Button buttonScissor;
-
-  @NonNull
-  public final Button saveBt;
+  public final ImageView buttonScissor;
 
   @NonNull
   public final TextView textBox;
@@ -38,14 +35,13 @@ public final class GameChooseBinding implements ViewBinding {
   @NonNull
   public final ToolbarBinding toolbarIn;
 
-  private GameChooseBinding(@NonNull ConstraintLayout rootView, @NonNull Button buttonPaper,
-      @NonNull Button buttonRock, @NonNull Button buttonScissor, @NonNull Button saveBt,
-      @NonNull TextView textBox, @NonNull ToolbarBinding toolbarIn) {
+  private GameChooseBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView buttonPaper,
+      @NonNull ImageView buttonRock, @NonNull ImageView buttonScissor, @NonNull TextView textBox,
+      @NonNull ToolbarBinding toolbarIn) {
     this.rootView = rootView;
     this.buttonPaper = buttonPaper;
     this.buttonRock = buttonRock;
     this.buttonScissor = buttonScissor;
-    this.saveBt = saveBt;
     this.textBox = textBox;
     this.toolbarIn = toolbarIn;
   }
@@ -78,26 +74,20 @@ public final class GameChooseBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.buttonPaper;
-      Button buttonPaper = ViewBindings.findChildViewById(rootView, id);
+      ImageView buttonPaper = ViewBindings.findChildViewById(rootView, id);
       if (buttonPaper == null) {
         break missingId;
       }
 
       id = R.id.buttonRock;
-      Button buttonRock = ViewBindings.findChildViewById(rootView, id);
+      ImageView buttonRock = ViewBindings.findChildViewById(rootView, id);
       if (buttonRock == null) {
         break missingId;
       }
 
       id = R.id.buttonScissor;
-      Button buttonScissor = ViewBindings.findChildViewById(rootView, id);
+      ImageView buttonScissor = ViewBindings.findChildViewById(rootView, id);
       if (buttonScissor == null) {
-        break missingId;
-      }
-
-      id = R.id.saveBt;
-      Button saveBt = ViewBindings.findChildViewById(rootView, id);
-      if (saveBt == null) {
         break missingId;
       }
 
@@ -115,7 +105,7 @@ public final class GameChooseBinding implements ViewBinding {
       ToolbarBinding binding_toolbarIn = ToolbarBinding.bind(toolbarIn);
 
       return new GameChooseBinding((ConstraintLayout) rootView, buttonPaper, buttonRock,
-          buttonScissor, saveBt, textBox, binding_toolbarIn);
+          buttonScissor, textBox, binding_toolbarIn);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
