@@ -26,10 +26,14 @@ class GameWithThreePlayers: AppCompatActivity() {
         val buttonRock = gcb.buttonRock
         val buttonPaper = gcb.buttonPaper
         val buttonScissor = gcb.buttonScissor
+        val buttonSpock = gcb.buttonSpock
+        val buttonLizard = gcb.buttonLizard
 
         buttonRock.setOnClickListener { playGame("Pedra") }
         buttonPaper.setOnClickListener { playGame("Papel") }
         buttonScissor.setOnClickListener { playGame("Tesoura") }
+        buttonSpock.setOnClickListener { playGame("Spock")}
+        buttonLizard.setOnClickListener { playGame("Lagarto")}
     }
 
     private fun playGame(playerChoice: String) {
@@ -49,27 +53,98 @@ class GameWithThreePlayers: AppCompatActivity() {
         return when {
             // mesma escolha
             playerChoice == computerOneChoice && playerChoice == computerTwoChoice -> "Empate!"
-            // ninguem ganha
-            playerChoice == "Pedra" && computerOneChoice == "Tesoura" && computerTwoChoice == "Papel" -> "Empate!"
-            playerChoice == "Pedra" && computerOneChoice == "Papel" && computerTwoChoice == "Tesoura" -> "Empate!"
-            playerChoice == "Papel" && computerOneChoice == "Pedra" && computerTwoChoice == "Tesoura" -> "Empate!"
-            playerChoice == "Papel" && computerOneChoice == "Tesoura" && computerTwoChoice == "Pedra" -> "Empate!"
-            playerChoice == "Tesoura" && computerOneChoice == "Papel" && computerTwoChoice == "Pedra" -> "Empate!"
-            playerChoice == "Tesoura" && computerOneChoice == "Pedra" && computerTwoChoice == "Papel" -> "Empate!"
-            // 'vencedores' com o mesmo resultado
+            // ninguem ganha escolhendo pedra
+            playerChoice == "Pedra" && computerOneChoice == "Pedra" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Pedra" && computerOneChoice == "Tesoura" && computerTwoChoice == "Papel" ||
+            playerChoice == "Pedra" && computerOneChoice == "Papel" && computerTwoChoice == "Tesoura" ||
+            playerChoice == "Pedra" && computerOneChoice == "Lagarto" && computerTwoChoice == "Papel" ||
+            playerChoice == "Pedra" && computerOneChoice == "Lagarto" && computerTwoChoice == "Spock" ||
+            playerChoice == "Pedra" && computerOneChoice == "Spock" && computerTwoChoice == "Lagarto" ||
+            playerChoice == "Pedra" && computerOneChoice == "Spock" && computerTwoChoice == "Tesoura" -> "Empate!"
+
+            // ninguem ganha escolhendo papel
+            playerChoice == "Papel" && computerOneChoice == "Papel" && computerTwoChoice == "Papel" ||
+            playerChoice == "Papel" && computerOneChoice == "Pedra" && computerTwoChoice == "Tesoura" ||
+            playerChoice == "Papel" && computerOneChoice == "Pedra" && computerTwoChoice == "Lagarto" ||
+            playerChoice == "Papel" && computerOneChoice == "Tesoura" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Papel" && computerOneChoice == "Tesoura" && computerTwoChoice == "Spock" ||
+            playerChoice == "Papel" && computerOneChoice == "Lagarto" && computerTwoChoice == "Spock" ||
+            playerChoice == "Papel" && computerOneChoice == "Lagarto" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Papel" && computerOneChoice == "Spock" && computerTwoChoice == "Tesoura" ||
+            playerChoice == "Papel" && computerOneChoice == "Spock" && computerTwoChoice == "Lagarto" -> "Empate!"
+
+            //ninguem ganha escolhendo tesoura
+            playerChoice == "Tesoura" && computerOneChoice == "Tesoura" && computerTwoChoice == "Tesoura" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Papel" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Papel" && computerTwoChoice == "Spock" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Pedra" && computerTwoChoice == "Lagarto" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Pedra" && computerTwoChoice == "Papel" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Lagarto" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Lagarto" && computerTwoChoice == "Spock" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Spock" && computerTwoChoice == "Papel" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Spock" && computerTwoChoice == "Lagarto" -> "Empate!"
+
+            //ninguem ganha escolhendo lagarto
+            playerChoice == "Lagarto" && computerOneChoice == "Lagarto" && computerTwoChoice == "Lagarto" ||
+            playerChoice == "Lagarto" && computerOneChoice == "Papel" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Lagarto" && computerOneChoice == "Papel" && computerTwoChoice == "Tesoura" ||
+            playerChoice == "Lagarto" && computerOneChoice == "Spock" && computerTwoChoice == "Tesoura" ||
+            playerChoice == "Lagarto" && computerOneChoice == "Spock" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Lagarto" && computerOneChoice == "Tesoura" && computerTwoChoice == "Papel" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Tesoura" && computerTwoChoice == "Spock" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Pedra" && computerTwoChoice == "Papel" ||
+            playerChoice == "Tesoura" && computerOneChoice == "Pedra" && computerTwoChoice == "Spock" -> "Empate!"
+
+            //ninguem ganha escolhendo spock
+            playerChoice == "Spock" && computerOneChoice == "Spock" && computerTwoChoice == "Spock" ||
+            playerChoice == "Spock" && computerOneChoice == "Pedra" && computerTwoChoice == "Papel" ||
+            playerChoice == "Spock" && computerOneChoice == "Pedra" && computerTwoChoice == "Lagarto" ||
+            playerChoice == "Spock" && computerOneChoice == "Tesoura" && computerTwoChoice == "Papel" ||
+            playerChoice == "Spock" && computerOneChoice == "Tesoura" && computerTwoChoice == "Lagarto" ||
+            playerChoice == "Spock" && computerOneChoice == "Papel" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Spock" && computerOneChoice == "Papel" && computerTwoChoice == "Tesoura" ||
+            playerChoice == "Spock" && computerOneChoice == "Lagarto" && computerTwoChoice == "Pedra" ||
+            playerChoice == "Spock" && computerOneChoice == "Lagarto" && computerTwoChoice == "Tesoura" -> "Empate!"
+
+
+            // empate pelo mesmo resultado
             playerChoice == "Pedra" && computerOneChoice == "Pedra" && computerTwoChoice == "Tesoura" -> "Empate!"
-            playerChoice == "Tesoura" && computerOneChoice == "Pedra" && computerTwoChoice == "Pedra" -> "Empate!"
-            playerChoice == "Pedra" && computerOneChoice == "Tesoura" && computerTwoChoice == "Pedra" -> "Empate!"
+            playerChoice == "Pedra" && computerOneChoice == "Pedra" && computerTwoChoice == "Lagarto" -> "Empate!"
             playerChoice == "Papel" && computerOneChoice == "Papel" && computerTwoChoice == "Pedra" -> "Empate!"
-            playerChoice == "Pedra" && computerOneChoice == "Papel" && computerTwoChoice == "Papel" -> "Empate!"
-            playerChoice == "Papel" && computerOneChoice == "Pedra" && computerTwoChoice == "Papel" -> "Empate!"
+            playerChoice == "Papel" && computerOneChoice == "Papel" && computerTwoChoice == "Spock" -> "Empate!"
             playerChoice == "Tesoura" && computerOneChoice == "Tesoura" && computerTwoChoice == "Papel" -> "Empate!"
-            playerChoice == "Papel" && computerOneChoice == "Tesoura" && computerTwoChoice == "Tesoura" -> "Empate!"
-            playerChoice == "Tesoura" && computerOneChoice == "Papel" && computerTwoChoice == "Tesoura" -> "Empate!"
+            playerChoice == "Tesoura" && computerOneChoice == "Tesoura" && computerTwoChoice == "Lagarto" -> "Empate!"
+            playerChoice == "Lagarto" && computerOneChoice == "Lagarto" && computerTwoChoice == "Papel" -> "Empate!"
+            playerChoice == "Lagarto" && computerOneChoice == "Lagarto" && computerTwoChoice == "Spock" -> "Empate!"
+            playerChoice == "Spock" && computerOneChoice == "Spock" && computerTwoChoice == "Pedra" -> "Empate!"
+            playerChoice == "Spock" && computerOneChoice == "Spock" && computerTwoChoice == "Tesoura" -> "Empate!"
+
             // ganhar
-            playerChoice == "Pedra" && computerOneChoice == "Tesoura" && computerTwoChoice == "Tesoura"||
-                    playerChoice == "Papel" && computerOneChoice == "Pedra" && computerTwoChoice == "Pedra"||
-                    playerChoice == "Tesoura" && computerOneChoice == "Papel" && computerTwoChoice == "Papel "-> "Você venceu!"
+            playerChoice == "Pedra" && computerOneChoice == "Tesoura" && computerTwoChoice == "Tesoura" -> "Você venceu!"
+            playerChoice == "Pedra" && computerOneChoice == "Lagarto" && computerTwoChoice == "Lagarto" -> "Você venceu!"
+            playerChoice == "Pedra" && computerOneChoice == "Tesoura" && computerTwoChoice == "Lagarto" -> "Você venceu!"
+            playerChoice == "Pedra" && computerOneChoice == "Lagarto" && computerTwoChoice == "Tesoura" -> "Você venceu!"
+
+            playerChoice == "Papel" && computerOneChoice == "Pedra" && computerTwoChoice == "Pedra" -> "Você venceu!"
+            playerChoice == "Papel" && computerOneChoice == "Spock" && computerTwoChoice == "Spock" -> "Você venceu!"
+            playerChoice == "Papel" && computerOneChoice == "Spock" && computerTwoChoice == "Pedra" -> "Você venceu!"
+            playerChoice == "Papel" && computerOneChoice == "Pedra" && computerTwoChoice == "Spock" -> "Você venceu!"
+
+            playerChoice == "Tesoura" && computerOneChoice == "Papel" && computerTwoChoice == "Papel" -> "Você venceu!"
+            playerChoice == "Tesoura" && computerOneChoice == "Lagarto" && computerTwoChoice == "Lagarto" -> "Você venceu!"
+            playerChoice == "Tesoura" && computerOneChoice == "Papel" && computerTwoChoice == "Lagarto" -> "Você venceu!"
+            playerChoice == "Tesoura" && computerOneChoice == "Lagarto" && computerTwoChoice == "Papel" -> "Você venceu!"
+
+            playerChoice == "Lagarto" && computerOneChoice == "Papel" && computerTwoChoice == "Papel" -> "Você venceu!"
+            playerChoice == "Lagarto" && computerOneChoice == "Spock" && computerTwoChoice == "Spock" -> "Você venceu!"
+            playerChoice == "Lagarto" && computerOneChoice == "Papel" && computerTwoChoice == "Spock" -> "Você venceu!"
+            playerChoice == "Lagarto" && computerOneChoice == "Spock" && computerTwoChoice == "Papel" -> "Você venceu!"
+
+            playerChoice == "Spock" && computerOneChoice == "Tesoura" && computerTwoChoice == "Tesoura" -> "Você venceu!"
+            playerChoice == "Spock" && computerOneChoice == "Pedra" && computerTwoChoice == "Pedra" -> "Você venceu!"
+            playerChoice == "Spock" && computerOneChoice == "Tesoura" && computerTwoChoice == "Pedra" -> "Você venceu!"
+            playerChoice == "Spock" && computerOneChoice == "Pedra" && computerTwoChoice == "Tesoura" -> "Você venceu!"
+
             else -> "Você perdeu!"
         }
     }

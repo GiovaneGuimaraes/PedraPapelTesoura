@@ -3003,6 +3003,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24
+drawable lizard
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3077,6 +3078,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable paisagem
 drawable papel
+drawable spockhand
 drawable tesouras
 drawable test_level_drawable
 drawable tooltip_frame_dark
@@ -3179,10 +3181,12 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id buttonLizard
 id buttonPanel
 id buttonPaper
 id buttonRock
 id buttonScissor
+id buttonSpock
 id buttonThreePlayers
 id buttonTwoPlayers
 id cache_measures
@@ -3273,6 +3277,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id firstLinear
 id fitCenter
 id fitEnd
 id fitStart

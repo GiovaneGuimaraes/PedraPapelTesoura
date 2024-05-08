@@ -27,10 +27,14 @@ class GameWithTwoPlayers: AppCompatActivity() {
         val buttonRock = acb.buttonRock
         val buttonPaper = acb.buttonPaper
         val buttonScissor = acb.buttonScissor
+        val buttonSpock = acb.buttonSpock
+        val buttonLizard = acb.buttonLizard
 
         buttonRock.setOnClickListener { playGame("Pedra") }
         buttonPaper.setOnClickListener { playGame("Papel") }
         buttonScissor.setOnClickListener { playGame("Tesoura") }
+        buttonSpock.setOnClickListener { playGame("Spock")}
+        buttonLizard.setOnClickListener { playGame("Lagarto")}
     }
 
     private fun playGame(playerChoice: String) {
@@ -48,8 +52,15 @@ class GameWithTwoPlayers: AppCompatActivity() {
         return when {
             playerChoice == computerChoice -> "Empate!"
             playerChoice == "Pedra" && computerChoice == "Tesoura" ||
+                    playerChoice == "Pedra" && computerChoice == "Lagarto" ||
                     playerChoice == "Papel" && computerChoice == "Pedra" ||
-                    playerChoice == "Tesoura" && computerChoice == "Papel" -> "Você venceu!"
+                    playerChoice == "Papel" && computerChoice == "Spock" ||
+                    playerChoice == "Tesoura" && computerChoice == "Papel" ||
+                    playerChoice == "Tesoura" && computerChoice == "Lagarto" ||
+                    playerChoice == "Lagarto" && computerChoice == "Papel" ||
+                    playerChoice == "Lagarto" && computerChoice == "Spock" ||
+                    playerChoice == "Spock" && computerChoice == "Pedra" ||
+                    playerChoice == "Spock" && computerChoice == "Tesoura" -> "Você venceu!"
             else -> "Você perdeu!"
         }
     }
